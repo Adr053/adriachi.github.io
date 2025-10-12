@@ -6,23 +6,22 @@
   <title>adriachi 🎮</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
 
- <!-- Favicon - Usa un placeholder o descarga el original -->
+ <!-- Favicon -->
  <link rel="icon" href="https://preview.redd.it/chibi-yotsuba-pfps-by-on-twitter-v0-oik0krdb6i991.jpg?width=640&crop=smart&auto=webp&s=4b42be98b716240dc835490c6ed941186f3ca158" type="image/png">
 
-  <!-- Open Graph Meta Tags - Actualizado para adriachi -->
+  <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="adriachi 🎮" />
   <meta property="og:description" content="Welcome to adriachi's official site!" />
-  <meta property="og:image" content="assets/img/icon.png" /> <!-- Actualiza si hosteas -->
-  <meta property="og:url" content="https://tu-sitio.com/" /> <!-- Actualiza a tu URL -->
+  <meta property="og:image" content="assets/img/icon.png" />
+  <meta property="og:url" content="https://tu-sitio.com/" />
   <meta property="og:type" content="website" />
 
-  <!-- Twitter Card Meta Tags - Actualizado para adriachi -->
+  <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="adriachi 🎮 — osu!" />
   <meta name="twitter:description" content="Welcome to adriachi's official site!" />
-  <meta name="twitter:image" content="assets/img/preview-home.png" /> <!-- Agrega si tienes la imagen -->
+  <meta name="twitter:image" content="assets/img/preview-home.png" />
 
-  <!-- CSS Embebido (Escalado para más grande, con estilos para logo en nav, logo principal más grande, y GIF de fondo) -->
   <style>
     /* Reset and Base Styles */
     * {
@@ -33,35 +32,35 @@
 
     body {
       font-family: 'Nunito', sans-serif;
-      background-color: #0a0a0a; /* Fondo oscuro de respaldo (por si el GIF no carga) */
-      background-image: url('https://media1.tenor.com/m/fa0h0QDfpCsAAAAC/c-omputy.gif'); /* GIF de fondo */
-      background-size: cover; /* Cubre toda la pantalla */
-      background-position: center; /* Centrado */
-      background-repeat: no-repeat; /* No repetir */
-      background-attachment: fixed; /* Fijo al scroll para efecto parallax */
+      background-color: #0a0a0a;
+      background-image: url('https://media1.tenor.com/m/MiiSaoOtKHgAAAAC/black-background.gif');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       color: #ffffff;
       overflow-x: hidden;
       line-height: 1.6;
     }
 
-    /* Mania Background - Animated Arrows (osu! Mania inspired) - Más grandes, sobre el GIF */
+    /* Mania Background - Animated Arrows */
     .mania-bg {
       position: fixed;
-      top: 1000;
-      left: 10;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       pointer-events: none;
-      z-index: -1; /* Sobre el GIF, pero detrás del contenido */
+      z-index: 0;
     }
 
     .mania-arrow {
       position: absolute;
       bottom: 0;
-      width: 60px; /* Aumentado de 50px */
-      height: 60px; /* Aumentado de 50px */
-      background: linear-gradient(45deg, #ff69b4, #ff1493); /* Gradiente rosa para flechas */
-      clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Forma de flecha triangular */
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(45deg, #ff69b4, #ff1493);
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
       animation: maniaFloat 3s ease-in-out infinite;
     }
 
@@ -72,19 +71,19 @@
 
     .mania-arrow:nth-child(2) {
       left: 30%;
-      background: linear-gradient(45deg, #00bfff, #1e90ff); /* Variante azul */
+      background: linear-gradient(45deg, #00bfff, #1e90ff);
       animation-delay: 0.75s;
     }
 
     .mania-arrow:nth-child(3) {
       left: 60%;
-      background: linear-gradient(45deg, #ffd700, #ffa500); /* Variante dorado/naranja */
+      background: linear-gradient(45deg, #ffd700, #ffa500);
       animation-delay: 1.5s;
     }
 
     .mania-arrow:nth-child(4) {
       left: 80%;
-      background: linear-gradient(45deg, #ff69b4, #ff1493); /* Rosa de nuevo */
+      background: linear-gradient(45deg, #ff69b4, #ff1493);
       animation-delay: 2.25s;
     }
 
@@ -99,26 +98,170 @@
       }
     }
 
-    /* Main Container - Más ancho */
+    /* Main Container */
     .main-container {
       display: flex;
       justify-content: center;
       align-items: center;
+      gap: 30px;
       min-height: 100vh;
-      padding: 30px; /* Aumentado de 20px */
-      position: relative; /* Asegura que el contenido esté sobre el fondo */
-      z-index: 1; /* Sobre el GIF y flechas */
+      padding: 30px;
+      position: relative;
+      z-index: 1;
+      flex-direction: row-reverse;
     }
 
-    /* Content with Fade-Slide-In Animation - Más ancho */
-    .content {
-      text-align: center;
-      max-width: 800px; /* Aumentado de 600px */
+    /* Carousel Container */
+    .carousel-container {
+      position: relative;
+      max-width: 400px;
       width: 100%;
-      background: rgba(10, 10, 10, 0.7); /* Fondo semi-transparente para mejor legibilidad sobre GIF */
+      background: rgba(10, 10, 10, 0.7);
       padding: 20px;
       border-radius: 15px;
-      backdrop-filter: blur(5px); /* Efecto glassmorphism para que se vea bien sobre GIF */
+      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 20px rgba(255, 105, 180, 0.3);
+    }
+
+    .carousel-wrapper {
+      position: relative;
+      width: 100%;
+      height: 450px;
+      overflow: hidden;
+      border-radius: 10px;
+      background: #000;
+    }
+
+    .carousel-video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .carousel-video.active {
+      opacity: 1;
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .carousel-video:hover .video-overlay {
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .play-button {
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 105, 180, 0.9);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(255, 105, 180, 0.5);
+    }
+
+    .carousel-video:hover .play-button {
+      transform: scale(1.1);
+      background: rgba(255, 105, 180, 1);
+    }
+
+    .play-button::after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 25px solid white;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      margin-left: 5px;
+    }
+
+    .video-title {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      color: white;
+      font-size: 1.2em;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      z-index: 2;
+    }
+
+    .carousel-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    .carousel-btn {
+      background: linear-gradient(45deg, #5a5959, #2c292b);
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(255, 105, 180, 0.2);
+    }
+
+    .carousel-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+      background: linear-gradient(45deg, #7b6ec2, #a653c7);
+    }
+
+    .carousel-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .carousel-dot.active {
+      background: linear-gradient(45deg, #ff69b4, #ff1493);
+      width: 12px;
+      height: 12px;
+    }
+
+    /* Content with Fade-Slide-In Animation */
+    .content {
+      text-align: center;
+      max-width: 800px;
+      width: 100%;
+      background: rgba(10, 10, 10, 0.7);
+      padding: 20px;
+      border-radius: 15px;
+      backdrop-filter: blur(5px);
     }
 
     .fade-slide-in {
@@ -134,13 +277,13 @@
       }
     }
 
-    /* Logo - Más grande y rectangular */
+    /* Logo */
     .logo {
-      max-width: 450px; /* Aumentado de 350px para más grande */
+      max-width: 450px;
       height: auto;
-      margin-bottom: 60px; /* Aumentado de 50px para mejor espaciado */
-      border-radius: 8px; /* Rectangular con bordes ligeramente redondeados */
-      box-shadow: 0 4px 20px rgba(255, 105, 180, 0.3); /* Efecto glow */
+      margin-bottom: 60px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(255, 105, 180, 0.3);
       transition: transform 0.3s ease;
     }
 
@@ -148,37 +291,36 @@
       transform: scale(1.05);
     }
 
-    /* Navigation Menu - Botones más grandes */
+    /* Navigation Menu */
     .nav-menu {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px; /* Aumentado de 15px */
-      margin-bottom: 50px; /* Aumentado de 40px */
+      gap: 20px;
+      margin-bottom: 50px;
     }
 
     .nav-menu a {
-      display: flex; /* Cambiado a flex para alinear icono y texto */
-      align-items: center; /* Centra verticalmente el icono y texto */
-      justify-content: center; /* Centra horizontalmente */
-      padding: 16px 32px; /* Aumentado de 12px 24px */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 32px;
       background: linear-gradient(45deg, #5a5959, #2c292b);
       color: #ffffff;
       text-decoration: none;
       border-radius: 25px;
       font-weight: 700;
-      font-size: 1.3em; /* Aumentado de 1.1em */
+      font-size: 1.3em;
       transition: all 0.3s ease;
       box-shadow: 0 2px 10px rgba(255, 105, 180, 0.2);
-      gap: 8px; /* Espacio entre icono y texto */
+      gap: 8px;
     }
 
-    /* Estilos para el icono/logo dentro del nav */
     .nav-menu img {
-      width: 24px; /* Tamaño fijo para el icono (ajusta si quieres más grande) */
+      width: 24px;
       height: 24px;
-      flex-shrink: 0; /* Evita que se encoja */
-      border-radius: 4px; /* Ligeramente redondeado, opcional */
+      flex-shrink: 0;
+      border-radius: 4px;
     }
 
     .nav-menu a:hover {
@@ -187,22 +329,22 @@
       background: linear-gradient(45deg, #7b6ec2, #a653c7);
     }
 
-    /* Social Icons - Más grandes */
+    /* Social Icons */
     .social-icons {
       display: flex;
       justify-content: center;
-      gap: 25px; /* Aumentado de 20px */
+      gap: 25px;
     }
 
     .social-icons a {
       display: inline-block;
-      width: 60px; /* Aumentado de 50px */
-      height: 60px; /* Aumentado de 50px */
+      width: 60px;
+      height: 60px;
       transition: transform 0.3s ease;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.1);
-      padding: 12px; /* Aumentado de 10px */
-      backdrop-filter: blur(10px); /* Efecto glassmorphism */
+      padding: 12px;
+      backdrop-filter: blur(10px);
     }
 
     .social-icons a:hover {
@@ -213,13 +355,28 @@
     .social-icons img {
       width: 100%;
       height: 100%;
-      filter: brightness(1.2); /* Brillo leve en iconos */
+      filter: brightness(1.2);
     }
 
-    /* Responsive Design - Ajustado para escalas mayores */
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .main-container {
+        flex-direction: column;
+      }
+      .carousel-container {
+        max-width: 600px;
+      }
+    }
     @media (max-width: 768px) {
       .main-container {
         padding: 10px;
+        flex-direction: column;
+      }
+      .carousel-container {
+        max-width: 98%;
+      }
+      .carousel-wrapper {
+        height: 350px;
       }
       .content {
         max-width: 98%;
@@ -256,10 +413,32 @@
         width: 32px;
         height: 32px;
       }
+      .video-title {
+        font-size: 1em;
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+      }
     }
     @media (max-width: 480px) {
       .main-container {
         padding: 4px;
+      }
+      .carousel-wrapper {
+        height: 250px;
+      }
+      .carousel-btn {
+        padding: 8px 12px;
+        font-size: 0.9em;
+      }
+      .play-button {
+        width: 60px;
+        height: 60px;
+      }
+      .play-button::after {
+        border-left: 18px solid white;
+        border-top: 11px solid transparent;
+        border-bottom: 11px solid transparent;
       }
       .content {
         padding: 2px 2px;
@@ -294,6 +473,9 @@
         width: 20px;
         height: 20px;
       }
+      .video-title {
+        font-size: 0.85em;
+      }
       body {
         background-attachment: scroll;
       }
@@ -309,6 +491,57 @@
   </div>
 
   <main class="main-container">
+    <!-- Carousel de videos de YouTube a la derecha -->
+    <div class="carousel-container fade-slide-in">
+      <div class="carousel-wrapper">
+        <!-- Video 1 -->
+        <a href="https://www.youtube.com/watch?v=JAzrhyrpwP4" target="_blank" class="carousel-video active" style="background-image: url('https://img.youtube.com/vi/JAzrhyrpwP4/maxresdefault.jpg');">
+          <div class="video-overlay">
+            <div class="play-button"></div>
+          </div>
+          <div class="video-title">Music Machine FC</div>
+        </a>
+        
+        <!-- Video 2 -->
+        <a href="https://www.youtube.com/watch?v=7x25a-cLkuU" target="_blank" class="carousel-video" style="background-image: url('https://img.youtube.com/vi/7x25a-cLkuU/maxresdefault.jpg');">
+          <div class="video-overlay">
+            <div class="play-button"></div>
+          </div>
+          <div class="video-title">On and on DT</div>
+        </a>
+        
+        <!-- Video 3 -->
+        <a href="https://www.youtube.com/watch?v=vgtW4jj4bVM&t=21s" target="_blank" class="carousel-video" style="background-image: url('https://img.youtube.com/vi/vgtW4jj4bVM/maxresdefault.jpg');">
+          <div class="video-overlay">
+            <div class="play-button"></div>
+          </div>
+          <div class="video-title">Yume clear choke</div>
+        </a>
+        
+        <!-- Video 4 -->
+        <a href="https://www.youtube.com/watch?v=yvmC5ZxklFo" target="_blank" class="carousel-video" style="background-image: url('https://img.youtube.com/vi/yvmC5ZxklFo/maxresdefault.jpg');">
+          <div class="video-overlay">
+            <div class="play-button"></div>
+          </div>
+          <div class="video-title">Rebirth the end</div>
+        </a>
+        
+        <!-- Video 5 -->
+        <a href="https://www.youtube.com/watch?v=SgxDa7byu6A" target="_blank" class="carousel-video" style="background-image: url('https://img.youtube.com/vi/SgxDa7byu6A/maxresdefault.jpg');">
+          <div class="video-overlay">
+            <div class="play-button"></div>
+          </div>
+          <div class="video-title">The Blue Sanctuary</div>
+        </a>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prevBtn">← Anterior</button>
+        <div class="carousel-dots" id="dotsContainer"></div>
+        <button class="carousel-btn" id="nextBtn">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- Contenido principal -->
     <div class="content fade-slide-in">
       <img src="https://media.discordapp.net/attachments/1423964641905610752/1424421841912594432/14_sin_titulo_20251005174329.png?ex=68e880f7&is=68e72f77&hm=1ab810414523dab03239d655e5871a1b6f439ffc4111c39e7886bffe0391781e&=&format=webp&quality=lossless&width=1872&height=624" alt="adriachi" class="logo" />
 
@@ -341,5 +574,51 @@
       </div>
     </div>
   </main>
+
+  <script>
+    // Carrusel de videos de YouTube
+    const videos = document.querySelectorAll('.carousel-video');
+    const dotsContainer = document.getElementById('dotsContainer');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentIndex = 0;
+
+    // Crear dots
+    videos.forEach((_, index) => {
+      const dot = document.createElement('div');
+      dot.classList.add('carousel-dot');
+      if (index === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(index));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.carousel-dot');
+
+    function showSlide(index) {
+      videos.forEach(video => video.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      videos[index].classList.add('active');
+      dots[index].classList.add('active');
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % videos.length;
+      showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + videos.length) % videos.length;
+      showSlide(currentIndex);
+    }
+
+    function goToSlide(index) {
+      currentIndex = index;
+      showSlide(currentIndex);
+    }
+
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+  </script>
 </body>
 </html>
