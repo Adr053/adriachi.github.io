@@ -490,56 +490,7 @@
     <div class="mania-arrow"></div>
   </div>
 
-  <main class="main-container">
-    <!-- Carousel de videos de YouTube a la derecha -->
-    <div class="carousel-container fade-slide-in">
-      <div class="carousel-wrapper">
-        <!-- Video 1 -->
-        <a href="https://www.youtube.com/watch?v=JAzrhyrpwP4" target="_blank" class="carousel-video active" style="background-image: url('https://img.youtube.com/vi/JAzrhyrpwP4/maxresdefault.jpg');">
-          <div class="video-overlay">
-            <div class="play-button"></div>
-          </div>
-          <div class="video-title">Music Machine FC</div>
-        </a>
-        
-        <!-- Video 2 -->
-        <a href="https://www.youtube.com/watch?v=7x25a-cLkuU" target="_blank" class="carousel-video" style="background-image: url('https://img.youtube.com/vi/7x25a-cLkuU/maxresdefault.jpg');">
-          <div class="video-overlay">
-            <div class="play-button"></div>
-          </div>
-          <div class="video-title">On and on DT</div>
-        </a>
-        
-        <!-- Video 3 -->
-        <a href="https://www.youtube.com/watch?v=vgtW4jj4bVM&t=21s" target="_blank" class="carousel-video" style="background-image: url('https://img.youtube.com/vi/vgtW4jj4bVM/maxresdefault.jpg');">
-          <div class="video-overlay">
-            <div class="play-button"></div>
-          </div>
-          <div class="video-title">Yume clear choke</div>
-        </a>
-        
-        <!-- Video 4 -->
-        <a href="https://www.youtube.com/watch?v=yvmC5ZxklFo" target="_blank" class="carousel-video" style="background-image: url('https://img.youtube.com/vi/yvmC5ZxklFo/maxresdefault.jpg');">
-          <div class="video-overlay">
-            <div class="play-button"></div>
-          </div>
-          <div class="video-title">Rebirth the end</div>
-        </a>
-        
-        <!-- Video 5 -->
-        <a href="https://www.youtube.com/watch?v=SgxDa7byu6A" target="_blank" class="carousel-video" style="background-image: url('https://img.youtube.com/vi/SgxDa7byu6A/maxresdefault.jpg');">
-          <div class="video-overlay">
-            <div class="play-button"></div>
-          </div>
-          <div class="video-title">The Blue Sanctuary</div>
-        </a>
-      </div>
-      <div class="carousel-controls">
-        <button class="carousel-btn" id="prevBtn">← Anterior</button>
-        <div class="carousel-dots" id="dotsContainer"></div>
-        <button class="carousel-btn" id="nextBtn">Siguiente →</button>
-      </div>
-    </div>
+  
 
     <!-- Contenido principal -->
     <div class="content fade-slide-in">
@@ -575,50 +526,6 @@
     </div>
   </main>
 
-  <script>
-    // Carrusel de videos de YouTube
-    const videos = document.querySelectorAll('.carousel-video');
-    const dotsContainer = document.getElementById('dotsContainer');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    let currentIndex = 0;
-
-    // Crear dots
-    videos.forEach((_, index) => {
-      const dot = document.createElement('div');
-      dot.classList.add('carousel-dot');
-      if (index === 0) dot.classList.add('active');
-      dot.addEventListener('click', () => goToSlide(index));
-      dotsContainer.appendChild(dot);
-    });
-
-    const dots = document.querySelectorAll('.carousel-dot');
-
-    function showSlide(index) {
-      videos.forEach(video => video.classList.remove('active'));
-      dots.forEach(dot => dot.classList.remove('active'));
-      
-      videos[index].classList.add('active');
-      dots[index].classList.add('active');
-    }
-
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % videos.length;
-      showSlide(currentIndex);
-    }
-
-    function prevSlide() {
-      currentIndex = (currentIndex - 1 + videos.length) % videos.length;
-      showSlide(currentIndex);
-    }
-
-    function goToSlide(index) {
-      currentIndex = index;
-      showSlide(currentIndex);
-    }
-
-    prevBtn.addEventListener('click', prevSlide);
-    nextBtn.addEventListener('click', nextSlide);
-  </script>
+ 
 </body>
 </html>
