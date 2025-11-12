@@ -43,7 +43,7 @@
       line-height: 1.6;
     }
 
-    /* Mania Background - Animated Arrows */
+    /* Mania Background - Animated Mini GIFs */
     .mania-bg {
       position: fixed;
       top: 0;
@@ -54,36 +54,32 @@
       z-index: 0;
     }
 
-    .mania-arrow {
+    .mania-gif {
       position: absolute;
       bottom: 0;
       width: 60px;
       height: 60px;
-      background: linear-gradient(45deg, #ff69b4, #ff1493);
-      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
       animation: maniaFloat 3s ease-in-out infinite;
+      opacity: 0.7;
     }
 
-    .mania-arrow:nth-child(1) {
+    .mania-gif:nth-child(1) {
       left: 10%;
       animation-delay: 0s;
     }
 
-    .mania-arrow:nth-child(2) {
+    .mania-gif:nth-child(2) {
       left: 30%;
-      background: linear-gradient(45deg, #00bfff, #1e90ff);
       animation-delay: 0.75s;
     }
 
-    .mania-arrow:nth-child(3) {
+    .mania-gif:nth-child(3) {
       left: 60%;
-      background: linear-gradient(45deg, #ffd700, #ffa500);
       animation-delay: 1.5s;
     }
 
-    .mania-arrow:nth-child(4) {
+    .mania-gif:nth-child(4) {
       left: 80%;
-      background: linear-gradient(45deg, #ff69b4, #ff1493);
       animation-delay: 2.25s;
     }
 
@@ -116,7 +112,7 @@
       position: relative;
       max-width: 400px;
       width: 100%;
-      background: rgba(10, 10, 10, 0.7);
+      background: rgba(255, 255, 255, 0.7); /* Changed to semi-transparent white */
       padding: 20px;
       border-radius: 15px;
       backdrop-filter: blur(5px);
@@ -258,10 +254,11 @@
       text-align: center;
       max-width: 800px;
       width: 100%;
-      background: rgba(10, 10, 10, 0.7);
+      background: rgba(255, 255, 255, 0.7); /* Changed to semi-transparent white */
       padding: 20px;
       border-radius: 15px;
       backdrop-filter: blur(5px);
+      color: #000000; /* Changed text color to black for visibility on white background */
     }
 
     .fade-slide-in {
@@ -409,7 +406,7 @@
         height: 38px;
         padding: 6px;
       }
-      .mania-arrow {
+      .mania-gif {
         width: 32px;
         height: 32px;
       }
@@ -469,7 +466,7 @@
         height: 28px;
         padding: 3px;
       }
-      .mania-arrow {
+      .mania-gif {
         width: 20px;
         height: 20px;
       }
@@ -484,17 +481,18 @@
 </head>
 <body>
   <div class="mania-bg">
-    <div class="mania-arrow"></div>
-    <div class="mania-arrow"></div>
-    <div class="mania-arrow"></div>
-    <div class="mania-arrow"></div>
+    <!-- Reemplaza las URLs con tus mini GIFs -->
+    <img class="mania-gif" src="https://i.ibb.co/DffC2RwB/tokai-teio-uma-musume-unscreen.gif" alt="Mini GIF 1">
+    <img class="mania-gif" src="https://i.ibb.co/DffC2RwB/tokai-teio-uma-musume-unscreen.gif" alt="Mini GIF 2">
+    <img class="mania-gif" src="https://i.ibb.co/DffC2RwB/tokai-teio-uma-musume-unscreen.gif" alt="Mini GIF 3">
+    <img class="mania-gif" src="https://i.ibb.co/DffC2RwB/tokai-teio-uma-musume-unscreen.gif" alt="Mini GIF 4">
   </div>
 
   <!-- Contenedor principal centrado -->
   <main class="main-container">
     <div class="content fade-slide-in">
       <img
-        src="https://cdn.discordapp.com/attachments/1423964641905610752/1424421841912594432/14_sin_titulo_20251005174329.png?ex=6912b0f7&is=69115f77&hm=6ffef2c7e2e7387c659f6557f9382ec0b02581f57ec9200cb8909707031dba31&"
+        src="https://cdn.discordapp.com/attachments/1423964641905610752/1424421841912594432/14_sin_titulo_20251005174329.png?ex=6915fcb7&is=6914ab37&hm=6caea8d4f94d2bb0933fcc88bee37d0e0a5de992c41e32c2b66ccfa470fd859d&"
         alt="adriachi"
         class="logo"
       />
